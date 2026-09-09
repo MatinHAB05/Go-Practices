@@ -1,0 +1,9 @@
+  HEAD [1;4mhttp://localhost:14339/[0m [32m200 OK[0m [2m20ms[0m
+[2m────────────────────────────────────────────────────────────────────────────────[0m
+  POST [1;4mhttp://localhost:14339/_bulk[0m [32m200 OK[0m [2m6ms[0m
+[2m       » {"index":{"_id":"ozaqvrxs","_index":"products"}}
+       » {"in_stock":9066,"name":"lhxk5nys","price":97}
+       » {"create":{"_id":"yruwpqdj","_index":"products"}}
+       » {"in_stock":8476,"name":"ekpzi1pw","price":149}
+[0m[2m       « {"errors":false,"took":0,"items":[{"index":{"_index":"products","_id":"ozaqvrxs","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":1002,"_primary_term":1,"status":201}},{"create":{"_index":"products","_id":"yruwpqdj","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":1003,"_primary_term":1,"status":201}}]}
+[0m[2m────────────────────────────────────────────────────────────────────────────────[0m

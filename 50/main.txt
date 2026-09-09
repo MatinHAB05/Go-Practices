@@ -1,0 +1,55 @@
+package main
+
+import (
+	"fmt"
+	"go/ast"
+	"go/format"
+	"go/parser"
+	"go/token"
+	"log"
+)
+
+func main() {
+	// 1. Sample source code to parse
+	src := `package main
+
+func calculate() int {
+	x := 10 + 20
+	return x + 5
+}`
+
+	// 2. Create a FileSet to track source file positions
+	fset := token.NewFileSet()
+
+	// 3. Parse the code into an AST root node (*ast.File)
+	node, err := parser.ParseFile(fset, "example.go", src, parser.ParseComments)
+	if err != nil {
+		log.Fatalf("Parse error: %v", err)
+	}
+
+	// 4. Walk the AST and mutate specific nodes
+	ast.Inspect(node, func(n ast.Node) bool {
+		// Filter for Binary Expressions (e.g., x + y, a * b)
+		binaryExpr, ok := n.(*ast.BinaryExpr)
+		if !ok {
+			return true // Keep traversing child nodes
+		}
+
+		// Check if the operator is an Addition (+)
+		if binaryExpr.Op == token.ADD {
+			fmt.Printf("Found '+' operator at line %d\n", fset.Position(binaryExpr.OpPos).Line)
+
+			// Mutate the AST node directly: change '+' to '-'
+			binaryExpr.Op = token.SUB
+		}
+
+		return true
+	})
+
+	// 5. Print the modified AST back into valid Go source code
+	fmt.Println("\n--- Modified Code ---")
+	err = format.Node(log.Writer(), fset, node)
+	if err != nil {
+		log.Fatalf("Format error: %v", err)
+	}
+}

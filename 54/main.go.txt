@@ -1,0 +1,114 @@
+// package main
+
+// import (
+// 	"context"
+// 	"fmt"
+// 	"log"
+// 	"os"
+// 	"os/signal"
+// 	"syscall"
+// 	"time"
+
+// 	"github.com/jackc/pgx/v5/pgxpool"
+// 	"github.com/joho/godotenv"
+// 	"github.com/riverqueue/river"
+// 	"github.com/riverqueue/river/riverdriver/riverpgxv5"
+// 	"github.com/riverqueue/river/rivermigrate"
+// )
+
+// // ۱. تعریف آرگومان‌های جاب
+// type EmailArgs struct {
+// 	To      string `json:"to"`
+// 	Subject string `json:"subject"`
+// 	Body    string `json:"body"`
+// }
+
+// func (EmailArgs) Kind() string { return "send_email" }
+
+// // ۲. تعریف Worker برای پردازش جاب
+// type EmailWorker struct {
+// 	river.WorkerDefaults[EmailArgs]
+// }
+
+// func (w *EmailWorker) Work(ctx context.Context, job *river.Job[EmailArgs]) error {
+// 	fmt.Printf("\n📧 [EMAIL SENT] To: %s | Subject: %s\nBody: %s\n\n",
+// 		job.Args.To, job.Args.Subject, job.Args.Body)
+// 	return nil
+// }
+
+// func main() {
+// 	// بارگذاری متغیرهای محیطی از فایل .env
+// 	if err := godotenv.Load(); err != nil {
+// 		log.Println("Warning: No .env file found, reading environment variables directly")
+// 	}
+
+// 	// خواندن متغیرها از محیط برنامه
+// 	dbUser := os.Getenv("POSTGRES_USER")
+// 	dbPassword := os.Getenv("POSTGRES_PASSWORD")
+// 	dbName := os.Getenv("POSTGRES_DB")
+// 	dbPort := os.Getenv("POSTGRES_PORT")
+
+// 	// ساخت Connection String با استفاده از متغیرهای .env
+// 	dbURL := fmt.Sprintf("postgres://%s:%s@localhost:%s/%s?sslmode=disable",
+// 		dbUser, dbPassword, dbPort, dbName)
+
+// 	ctx := context.Background()
+
+// 	// اتصال به PostgreSQL
+// 	dbPool, err := pgxpool.New(ctx, dbURL)
+// 	if err != nil {
+// 		log.Fatalf("Unable to connect to database: %v", err)
+// 	}
+// 	defer dbPool.Close()
+
+// 	// ۳. اجرا کردن Migrationهای اولیه River روی دیتابیس
+// 	migrator, err := rivermigrate.New(riverpgxv5.New(dbPool), nil)
+// 	if err != nil {
+// 		log.Fatalf("Error creating migrator: %v", err)
+// 	}
+// 	_, err = migrator.Migrate(ctx, rivermigrate.DirectionUp, nil)
+// 	if err != nil {
+// 		log.Fatalf("Error running migrations: %v", err)
+// 	}
+
+// 	// ۴. ثبت Worker
+// 	workers := river.NewWorkers()
+// 	river.AddWorker(workers, &EmailWorker{})
+
+// 	// ۵. ساخت کلاینت River
+// 	riverClient, err := river.NewClient(riverpgxv5.New(dbPool), &river.Config{
+// 		Queues: map[string]river.QueueConfig{
+// 			river.QueueDefault: {MaxWorkers: 10},
+// 		},
+// 		Workers: workers,
+// 	})
+// 	if err != nil {
+// 		log.Fatalf("Error creating River client: %v", err)
+// 	}
+
+// 	// ۶. شروع به کار Workerها
+// 	if err := riverClient.Start(ctx); err != nil {
+// 		log.Fatalf("Error starting River client: %v", err)
+// 	}
+
+// 	// ۷. درج یک جاب نمونه در صف
+// 	_, err = riverClient.Insert(ctx, EmailArgs{
+// 		To:      "user@example.com",
+// 		Subject: "خوش آمدید!",
+// 		Body:    "این یک ایمیل تست از طریق River در Go است.",
+// 	}, nil)
+// 	if err != nil {
+// 		log.Fatalf("Error inserting job: %v", err)
+// 	}
+
+// 	fmt.Println("Job successfully inserted into queue!")
+
+// 	// مدیریت Graceful Shutdown
+// 	sigChan := make(chan os.Signal, 1)
+// 	signal.Notify(sigChan, syscall.SIGINT, syscall.SIGTERM)
+// 	<-sigChan
+
+// 	ctxTimeout, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+// 	defer cancel()
+// 	_ = riverClient.Stop(ctxTimeout)
+// }

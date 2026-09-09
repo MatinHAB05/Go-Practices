@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:${REDIS_VERSION:-7.2-alpine}
+    container_name: ${REDIS_CONTAINER:-redis_asynq_test}
+    restart: always
+    ports:
+      - "${REDIS_HOST_PORT:-15150}:6379"
+    command: redis-server --requirepass ${RDB_PASSWORD}
+    volumes:
+      - redis_data:/data
+
+  asynqmon:
+    image: hibiken/asynqmon:latest
+    container_name: asynqmon_dashboard
+    restart: always
+    ports:
+      - "8080:8080"
+    command:
+      - --redis-addr=redis:6379
+      - --redis-password=${RDB_PASSWORD}
+    depends_on:
+      - redis
+
+volumes:
+  redis_data:

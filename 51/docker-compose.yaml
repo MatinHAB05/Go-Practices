@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.5.1
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "${IN_ES}:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    networks:
+      - elk-net
+    env_file: .env
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:9.5.2
+    container_name: kibana
+    ports:
+      - "${IN_KIB}:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    networks:
+      - elk-net
+
+volumes:
+  es_data:
+
+networks:
+  elk-net:
+    driver: bridge

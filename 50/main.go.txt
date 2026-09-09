@@ -1,0 +1,42 @@
+package main
+
+import (
+	"fmt"
+	"go/ast"
+	"go/parser"
+	"go/token"
+)
+
+// TraceVisitor logs enter and exit events for each AST node
+type TraceVisitor struct{}
+
+func (v *TraceVisitor) Visit(n ast.Node) ast.Visitor {
+	// ast.Walk calls Visit(nil) after finishing the children of a node
+	if n == nil {
+		return nil
+	}
+
+	// 1. ENTER: Code here executes BEFORE visiting children
+	nodeType := fmt.Sprintf("%T", n)[5:] // Strip "*ast." prefix for cleaner output
+	fmt.Printf("%s ENTER\n", nodeType)
+
+	// 2. EXIT: Deferred code executes AFTER all children have been visited
+	defer fmt.Printf("%s EXIT\n", nodeType)
+
+	// Returning 'v' instructs ast.Walk to recursively visit this node's children
+	return v
+}
+
+func main() {
+	src := `package main
+func main() {
+	x := 10
+}`
+
+	fset := token.NewFileSet()
+	file, _ := parser.ParseFile(fset, "example.go", src, 0)
+
+	// Run the depth-first traversal
+	ast.Walk(&TraceVisitor{}, file)
+
+}

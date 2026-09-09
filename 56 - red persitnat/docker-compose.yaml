@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:${REDIS_VERSION:-7.2-alpine}
+    container_name: ${REDIS_CONTAINER:-redis_test}
+    restart: always
+    ports:
+      - "${REDIS_HOST_PORT:-15150}:6379"
+    command: redis-server --requirepass ${RDB_PASSWORD}
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
