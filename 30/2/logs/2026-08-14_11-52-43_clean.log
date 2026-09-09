@@ -1,0 +1,552 @@
+2026/08/14 11:52:43.012876 request url: https://api.telegram.org/bot***/getMe, payload: null
+2026/08/14 11:52:43.629651 response from 'https://api.telegram.org/bot***/getMe' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "allows_users_to_create_topics": false,
+    "can_connect_to_business": false,
+    "can_join_groups": true,
+    "can_manage_bots": false,
+    "can_read_all_group_messages": false,
+    "first_name": "AS7",
+    "has_main_web_app": false,
+    "has_topics_enabled": false,
+    "id": 7777388555,
+    "is_bot": true,
+    "supports_guest_queries": false,
+    "supports_inline_queries": true,
+    "supports_join_request_queries": false,
+    "username": "AS777_77_bot"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:52:43.758842 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "message": {
+        "chat": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "last_name": "HAB",
+          "type": "private",
+          "username": "MHB2005"
+        },
+        "date": 1786695575,
+        "entities": [
+          {
+            "length": 6,
+            "offset": 0,
+            "type": "bot_command"
+          }
+        ],
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "message_id": 509,
+        "text": "/start"
+      },
+      "update_id": 712567577
+    },
+    {
+      "message": {
+        "chat": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "last_name": "HAB",
+          "type": "private",
+          "username": "MHB2005"
+        },
+        "date": 1786695732,
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "message_id": 510,
+        "sticker": {
+          "emoji": "😏",
+          "file_id": "CAACAgQAAxkBAAIB_mp-0DQ64CC829UhBbSXDnvYcc4iAALBCAAC-B-5UPhanX3Pd_aiPQQ",
+          "file_size": 10984,
+          "file_unique_id": "AgADwQgAAvgfuVA",
+          "height": 512,
+          "is_animated": false,
+          "is_video": false,
+          "set_name": "TomFananMoteaseb",
+          "thumb": {
+            "file_id": "AAMCBAADGQEAAgH-an7QNDrgILzb1SEFtJcOe9hxziIAAsEIAAL4H7lQ-Fqdfc939qIBAAdtAAM9BA",
+            "file_size": 5702,
+            "file_unique_id": "AQADwQgAAvgfuVBy",
+            "height": 320,
+            "width": 320
+          },
+          "thumbnail": {
+            "file_id": "AAMCBAADGQEAAgH-an7QNDrgILzb1SEFtJcOe9hxziIAAsEIAAL4H7lQ-Fqdfc939qIBAAdtAAM9BA",
+            "file_size": 5702,
+            "file_unique_id": "AQADwQgAAvgfuVBy",
+            "height": 320,
+            "width": 320
+          },
+          "type": "regular",
+          "width": 512
+        }
+      },
+      "update_id": 712567578
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:52:43.766286 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "text": "Command or message not recognized. Please use /help for available options."
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:52:43.766286 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "reply_markup": {
+    "inline_keyboard": [
+      [
+        {
+          "callback_data": "select_opt1",
+          "text": "Option 1 🟢"
+        },
+        {
+          "callback_data": "select_opt2",
+          "text": "Option 2 🔵"
+        }
+      ]
+    ]
+  },
+  "text": "Hello! Welcome to the test bot. Please select an option:"
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:52:44.000734 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786695766,
+    "entities": [
+      {
+        "length": 5,
+        "offset": 46,
+        "type": "bot_command"
+      }
+    ],
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 511,
+    "text": "Command or message not recognized. Please use /help for available options."
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:52:44.040008 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786695766,
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 512,
+    "reply_markup": {
+      "inline_keyboard": [
+        [
+          {
+            "callback_data": "select_opt1",
+            "text": "Option 1 🟢"
+          },
+          {
+            "callback_data": "select_opt2",
+            "text": "Option 2 🔵"
+          }
+        ]
+      ]
+    },
+    "text": "Hello! Welcome to the test bot. Please select an option:"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:52:54.661098 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "message": {
+        "chat": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "last_name": "HAB",
+          "type": "private",
+          "username": "MHB2005"
+        },
+        "date": 1786695777,
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "message_id": 513,
+        "sticker": {
+          "emoji": "😈",
+          "file_id": "CAACAgQAAxkBAAICAWp-0GFvKkIJGEwz-LoKB2RO0bRSAAJDCwAChw-4UHmsCcDTtQm4PQQ",
+          "file_size": 9974,
+          "file_unique_id": "AgADQwsAAocPuFA",
+          "height": 339,
+          "is_animated": false,
+          "is_video": false,
+          "set_name": "TomFananMoteaseb",
+          "thumb": {
+            "file_id": "AAMCBAADGQEAAgIBan7QYW8qQgkYTDP4ugoHZE7RtFIAAkMLAAKHD7hQeawJwNO1CbgBAAdtAAM9BA",
+            "file_size": 5908,
+            "file_unique_id": "AQADQwsAAocPuFBy",
+            "height": 212,
+            "width": 320
+          },
+          "thumbnail": {
+            "file_id": "AAMCBAADGQEAAgIBan7QYW8qQgkYTDP4ugoHZE7RtFIAAkMLAAKHD7hQeawJwNO1CbgBAAdtAAM9BA",
+            "file_size": 5908,
+            "file_unique_id": "AQADQwsAAocPuFBy",
+            "height": 212,
+            "width": 320
+          },
+          "type": "regular",
+          "width": 512
+        }
+      },
+      "update_id": 712567579
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:52:54.661738 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "text": "Command or message not recognized. Please use /help for available options."
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:52:54.924636 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786695777,
+    "entities": [
+      {
+        "length": 5,
+        "offset": 46,
+        "type": "bot_command"
+      }
+    ],
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 514,
+    "text": "Command or message not recognized. Please use /help for available options."
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:56:11.091775 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "inline_query": {
+        "chat_type": "group",
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "id": "5568951520977578966",
+        "offset": "",
+        "query": ""
+      },
+      "update_id": 712567580
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:56:15.637409 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "inline_query": {
+        "chat_type": "group",
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "id": "5568951523300437267",
+        "offset": "",
+        "query": "asdadd"
+      },
+      "update_id": 712567581
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:57:21.385231 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "callback_query": {
+        "chat_instance": "-7109816567074987546",
+        "data": "select_opt1",
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "id": "5568951521784935179",
+        "message": {
+          "chat": {
+            "first_name": "Matin",
+            "id": 5591589863,
+            "last_name": "HAB",
+            "type": "private",
+            "username": "MHB2005"
+          },
+          "date": 1786695766,
+          "from": {
+            "first_name": "AS7",
+            "id": 7777388555,
+            "is_bot": true,
+            "username": "AS777_77_bot"
+          },
+          "message_id": 512,
+          "reply_markup": {
+            "inline_keyboard": [
+              [
+                {
+                  "callback_data": "select_opt1",
+                  "text": "Option 1 🟢"
+                },
+                {
+                  "callback_data": "select_opt2",
+                  "text": "Option 2 🔵"
+                }
+              ]
+            ]
+          },
+          "text": "Hello! Welcome to the test bot. Please select an option:"
+        }
+      },
+      "update_id": 712567582
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:57:21.386126 request url: https://api.telegram.org/bot***/answerCallbackQuery, payload:
+Payload:
+{
+  "callback_query_id": "5568951521784935179",
+  "text": "Selection recorded!"
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:57:21.651384 response from 'https://api.telegram.org/bot***/answerCallbackQuery' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:57:21.651901 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "text": "You clicked the button with data: `select_opt1` 🔥"
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:57:21.932192 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786696044,
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 515,
+    "text": "You clicked the button with data: `select_opt1` 🔥"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:57:43.564039 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "callback_query": {
+        "chat_instance": "-7109816567074987546",
+        "data": "select_opt1",
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "id": "5568951522707893519",
+        "message": {
+          "chat": {
+            "first_name": "Matin",
+            "id": 5591589863,
+            "last_name": "HAB",
+            "type": "private",
+            "username": "MHB2005"
+          },
+          "date": 1786695766,
+          "from": {
+            "first_name": "AS7",
+            "id": 7777388555,
+            "is_bot": true,
+            "username": "AS777_77_bot"
+          },
+          "message_id": 512,
+          "reply_markup": {
+            "inline_keyboard": [
+              [
+                {
+                  "callback_data": "select_opt1",
+                  "text": "Option 1 🟢"
+                },
+                {
+                  "callback_data": "select_opt2",
+                  "text": "Option 2 🔵"
+                }
+              ]
+            ]
+          },
+          "text": "Hello! Welcome to the test bot. Please select an option:"
+        }
+      },
+      "update_id": 712567583
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:57:43.564570 request url: https://api.telegram.org/bot***/answerCallbackQuery, payload:
+Payload:
+{
+  "callback_query_id": "5568951522707893519",
+  "text": "Selection recorded!"
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:57:43.701217 response from 'https://api.telegram.org/bot***/answerCallbackQuery' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:57:43.701217 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "text": "You clicked the button with data: `select_opt1` 🔥"
+}
+--------------------------------------------------------------------------------
+2026/08/14 11:57:43.874673 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786696066,
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 516,
+    "text": "You clicked the button with data: `select_opt1` 🔥"
+  }
+}
+--------------------------------------------------------------------------------

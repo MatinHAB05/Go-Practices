@@ -1,0 +1,72 @@
+package main
+
+import (
+	"crypto/rand"
+	"fmt"
+	"time"
+
+	"aidanwoods.dev/go-paseto"
+)
+
+type X struct {
+	Name string
+	Age  int
+}
+
+func main() {
+	fmt.Println("======== PASETO V4 DEMO ========")
+
+	// =========================================================================
+	// 1. PASETO v4.local (Symmetric AEAD Encryption)
+	// =========================================================================
+	fmt.Println("\n--- 1. Testing PASETO v4.local (Symmetric) ---")
+
+	// Generate a 32-byte secret key via CSPRNG
+	var secretKey [32]byte
+	if _, err := rand.Read(secretKey[:]); err != nil {
+		panic(err)
+	}
+	symmetricKey := paseto.NewV4SymmetricKey()
+	fmt.Println(secretKey)
+
+	// Build token claims
+	localToken := paseto.NewToken()
+	localToken.SetIssuedAt(time.Now())
+	localToken.SetExpiration(time.Now().Add(1 * time.Hour))
+	localToken.SetSubject("user_9876")
+	localToken.SetString("role", "developer")
+	localToken.Set("obj", X{
+		Name: "Matin",
+		Age:  22,
+	})
+
+	footer := []byte(`{"kid":"key-2026-v1"}`)
+
+	// Encrypt token (creates Nonce + Ciphertext + Poly1305 MAC automatically)
+	encryptedTokenString := localToken.V4Encrypt(symmetricKey, footer)
+	fmt.Println("Encrypted Token:")
+	fmt.Println(encryptedTokenString)
+
+	// Decrypt and Verify Token
+	parsedLocal, err := paseto.NewParser().ParseV4Local(symmetricKey, encryptedTokenString, footer)
+	if err != nil {
+		fmt.Printf("Decryption Failed: %v\n", err)
+	} else {
+		sub, _ := parsedLocal.GetSubject()
+		role, _ := parsedLocal.GetString("role")
+		var x X
+		_ = parsedLocal.Get("obj", &x)
+		fmt.Printf("Success! Sub: %s, Role: %s , X : %v\n", sub, role, x)
+	}
+
+	// Tamper Test (Flip 1 byte in the ciphertext)
+	fmt.Println("\n[Tamper Test] Modifying ciphertext...")
+	tamperedBytes := []byte(encryptedTokenString)
+	tamperedBytes[25] ^= 0xFF // Flip bits at index 25
+
+	_, err = paseto.NewParser().ParseV4Local(symmetricKey, string(tamperedBytes), footer)
+	if err != nil {
+		fmt.Printf("Expected Security Pass: Token rejected by AEAD! (%v)\n", err)
+	}
+
+}

@@ -1,0 +1,2 @@
+[90m2026-08-07T22:13:57+03:30[0m [32mINF[0m [1mServer starting[0m [36mbool=[0mtrue [36menv=[0mdevelopment
+[90m10:14PM[0m [32mINF[0m [1mServer starting[0m [36mbool=[0mtrue [36menv=[0mdevelopment

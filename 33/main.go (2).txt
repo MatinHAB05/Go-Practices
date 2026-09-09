@@ -1,0 +1,164 @@
+package main
+
+import (
+	"log"
+
+	"github.com/spf13/viper"
+	"github.com/wneessen/go-mail"
+)
+
+const ENV_FILE = `C:\Users\MSI\Pictures\.env`
+
+type EmailConfig struct {
+	EmailFrom string `mapstructure:"email_from"`
+	EmailTo   string `mapstructure:"email_to"`
+	Password  string `mapstructure:"email_password"`
+	Host      string `mapstructure:"smtp_host"`
+	Port      int    `mapstructure:"smtp_port"`
+}
+
+func main() {
+	var cfg EmailConfig
+	viper.AddConfigPath(ENV_FILE + `\..`)
+	viper.SetConfigName(".env")
+	viper.SetConfigType("env")
+
+	if err := viper.ReadInConfig(); err != nil {
+		log.Fatalln(err)
+	}
+	if err := viper.Unmarshal(&cfg); err != nil {
+		log.Fatalln(err)
+	}
+
+	message := mail.NewMsg()
+
+	// --- ۱. تنظیمات فرستنده و گیرندگان ---
+	if err := message.From(cfg.EmailFrom); err != nil {
+		log.Fatalf("failed to set From: %s", err)
+	}
+	if err := message.To(cfg.EmailTo); err != nil {
+		log.Fatalf("failed to set To: %s", err)
+	}
+	message.Cc("other@example.com")   // افزودن رونوشت
+	message.Bcc("secret@example.com") // افزودن رونوشت مخفی
+
+	message.Subject("🎬 رزرو بلیت سینما با موفقیت انجام شد - کد پیگیری: #89421")
+
+	// --- ۲. جای‌گذاری عکس درون بدنه ایمیل (Inline CID Image) ---
+	// فایل عکس (مثلاً poster.jpg) باید در کنار پروژه باشد یا مسیر کامل آن داده شود
+	// با این کار عکس با CID شناسه poster.jpg داخل ایمیل Embed
+	message.EmbedFile("poster.png")
+
+	// --- ۳. نسخه متنی ساده (برای کلاینت‌های قدیمی) ---
+	plainBody := `سلام متین عزیز،
+رزرو بلیت شما برای فیلم "Oppenheimer" تایید شد.
+
+جزئیات رزرو:
+- سالن: سالن شماره ۱
+- صندلی: F12, F13
+- زمان: جمعه ۲۰ مرداد - ساعت ۲۰:۳۰
+- مبلغ کل: ۴۵۰,۰۰۰ تومان
+
+جهت مشاهده بلیت آنلاین به سایت مراجعه کنید.`
+
+	message.SetBodyString(mail.TypeTextPlain, plainBody)
+
+	// --- ۴. نسخه HTML شکیل همراه با پوستر فیلم ---
+	htmlBody := `<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #121212; color: #e0e0e0; margin: 0; padding: 20px; }
+        .ticket-card { max-width: 550px; margin: 0 auto; background: #1e1e1e; border-radius: 12px; border: 1px solid #333; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        .header { background: linear-gradient(135deg, #e50914, #b20710); padding: 20px; text-color: #ffffff; text-align: center; }
+        .header h1 { margin: 0; font-size: 20px; color: #ffffff; }
+        .poster-box { width: 100%; max-height: 250px; overflow: hidden; background-color: #000; text-align: center; }
+        .poster-box img { width: 100%; height: auto; object-fit: cover; display: block; }
+        .content { padding: 25px; }
+        .movie-title { font-size: 20px; font-weight: bold; color: #ffffff; margin-bottom: 15px; border-bottom: 2px solid #e50914; padding-bottom: 8px; display: inline-block; }
+        .details-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .details-table td { padding: 10px 0; border-bottom: 1px solid #2a2a2a; font-size: 14px; }
+        .details-table td.label { color: #888; text-align: right; }
+        .details-table td.value { color: #fff; font-weight: bold; text-align: left; }
+        .badge { background-color: #2e7d32; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 12px; }
+        .btn-container { text-align: center; margin-top: 30px; }
+        .btn { background-color: #e50914; color: #ffffff !important; text-decoration: none; padding: 12px 30px; border-radius: 6px; font-weight: bold; display: inline-block; box-shadow: 0 4px 12px rgba(229,9,20,0.4); }
+        .footer { background-color: #181818; text-align: center; padding: 15px; font-size: 12px; color: #666; border-top: 1px solid #2a2a2a; }
+    </style>
+</head>
+<body>
+    <div class="ticket-card">
+        <div class="header">
+            <h1>سیستم آنلاین رزرو بلیت سینما</h1>
+        </div>
+        
+        <!-- عکس داخل ایمیل با استفاده از CID لود می‌شود -->
+        <div class="poster-box">
+            <img src="cid:poster.png" alt="پوستر فیلم Oppenheimer" />
+        </div>
+
+        <div class="content">
+            <p style="font-size: 16px;">سلام <strong>متین عزیز</strong>، پرداخت شما با موفقیت انجام شد <span class="badge">تایید شده</span></p>
+            
+            <div class="movie-title">🎬 فیلم: Oppenheimer (۲۰۲۳)</div>
+
+            <table class="details-table">
+                <tr>
+                    <td class="label">کد پیگیری:</td>
+                    <td class="value">#89421</td>
+                </tr>
+                <tr>
+                    <td class="label">سینما / سالن:</td>
+                    <td class="value">پردیس کوروش - سالن ۱</td>
+                </tr>
+                <tr>
+                    <td class="label">تاریخ و سانس:</td>
+                    <td class="value">جمعه ۲۰ مرداد - ساعت ۲۰:۳۰</td>
+                </tr>
+                <tr>
+                    <td class="label">شماره صندلی‌ها:</td>
+                    <td class="value">ردیف F - صندلی ۱۲ و ۱۳</td>
+                </tr>
+                <tr>
+                    <td class="label">مبلغ پرداختی:</td>
+                    <td class="value" style="color: #4caf50;">۴۵۰,۰۰۰ تومان</td>
+                </tr>
+            </table>
+
+            <div class="btn-container">
+                <a href="https://go.dev/images/gophers/motorcycle.svg" class="btn">مشاهده و دانلود بلیت</a>
+            </div>
+        </div>
+        <div class="footer">
+            اگر شما این سفارش را ثبت نکرده‌اید، لطفاً با پشتیبانی تماس بگیرید.<br>
+            © ۲۰۲۶ تمامی حقوق محفوظ است.
+        </div>
+    </div>
+</body>
+</html>`
+
+	message.AddAlternativeString(mail.TypeTextHTML, htmlBody)
+
+	// --- ۵. پیوست کردن فایل (Attachment معمولی) ---
+	message.AttachFile("go.sum")
+
+	// --- ۶. تنظیمات کلاینت و ارسال ---
+	client, err := mail.NewClient(
+		cfg.Host,
+		mail.WithPort(cfg.Port),
+		mail.WithSMTPAuth(mail.SMTPAuthPlain),
+		mail.WithUsername(cfg.EmailFrom),
+		mail.WithPassword(cfg.Password),
+		mail.WithTLSPolicy(mail.TLSMandatory),
+	)
+	if err != nil {
+		log.Fatalf("failed to create mail client: %s", err)
+	}
+
+	if err := client.DialAndSend(message); err != nil {
+		log.Fatalf("failed to send mail: %s", err)
+	}
+
+	log.Println("ایمیل همراه با تصویر پوستر با موفقیت ارسال شد!")
+}

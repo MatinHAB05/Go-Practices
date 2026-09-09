@@ -1,0 +1,295 @@
+2026/08/14 17:31:38.015035 request url: https://api.telegram.org/bot***/getMe, payload: null
+2026/08/14 17:31:38.747810 response from 'https://api.telegram.org/bot***/getMe' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "allows_users_to_create_topics": false,
+    "can_connect_to_business": false,
+    "can_join_groups": true,
+    "can_manage_bots": false,
+    "can_read_all_group_messages": false,
+    "first_name": "AS7",
+    "has_main_web_app": false,
+    "has_topics_enabled": false,
+    "id": 7777388555,
+    "is_bot": true,
+    "supports_guest_queries": false,
+    "supports_inline_queries": true,
+    "supports_join_request_queries": false,
+    "username": "AS777_77_bot"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:31:38.868945 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "message": {
+        "chat": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "last_name": "HAB",
+          "type": "private",
+          "username": "MHB2005"
+        },
+        "date": 1786716100,
+        "entities": [
+          {
+            "length": 5,
+            "offset": 0,
+            "type": "bot_command"
+          }
+        ],
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "message_id": 586,
+        "text": "/help"
+      },
+      "update_id": 712567625
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:31:38.877445 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "text": "Bot commands:\n/start - Start and view options\n/help - Show help message"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:31:39.140205 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786716101,
+    "entities": [
+      {
+        "length": 6,
+        "offset": 14,
+        "type": "bot_command"
+      },
+      {
+        "length": 5,
+        "offset": 46,
+        "type": "bot_command"
+      }
+    ],
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 587,
+    "text": "Bot commands:\n/start - Start and view options\n/help - Show help message"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:31:44.479591 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "message": {
+        "chat": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "last_name": "HAB",
+          "type": "private",
+          "username": "MHB2005"
+        },
+        "date": 1786716107,
+        "entities": [
+          {
+            "length": 6,
+            "offset": 0,
+            "type": "bot_command"
+          }
+        ],
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "message_id": 588,
+        "text": "/start"
+      },
+      "update_id": 712567626
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:31:44.480225 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "reply_markup": {
+    "inline_keyboard": [
+      [
+        {
+          "callback_data": "select_opt1",
+          "text": "Option 1 🟢"
+        },
+        {
+          "callback_data": "select_opt2",
+          "text": "Option 2 🔵"
+        }
+      ]
+    ]
+  },
+  "text": "Hello! Welcome to the test bot. Please select an option:"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:31:44.686794 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786716107,
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 589,
+    "reply_markup": {
+      "inline_keyboard": [
+        [
+          {
+            "callback_data": "select_opt1",
+            "text": "Option 1 🟢"
+          },
+          {
+            "callback_data": "select_opt2",
+            "text": "Option 2 🔵"
+          }
+        ]
+      ]
+    },
+    "text": "Hello! Welcome to the test bot. Please select an option:"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:31:50.588373 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "callback_query": {
+        "chat_instance": "-7109816567074987546",
+        "data": "select_opt1",
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "id": "5568951524152467915",
+        "message": {
+          "chat": {
+            "first_name": "Matin",
+            "id": 5591589863,
+            "last_name": "HAB",
+            "type": "private",
+            "username": "MHB2005"
+          },
+          "date": 1786716107,
+          "from": {
+            "first_name": "AS7",
+            "id": 7777388555,
+            "is_bot": true,
+            "username": "AS777_77_bot"
+          },
+          "message_id": 589,
+          "reply_markup": {
+            "inline_keyboard": [
+              [
+                {
+                  "callback_data": "select_opt1",
+                  "text": "Option 1 🟢"
+                },
+                {
+                  "callback_data": "select_opt2",
+                  "text": "Option 2 🔵"
+                }
+              ]
+            ]
+          },
+          "text": "Hello! Welcome to the test bot. Please select an option:"
+        }
+      },
+      "update_id": 712567627
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:31:50.590320 request url: https://api.telegram.org/bot***/answerCallbackQuery, payload:
+Payload:
+{
+  "callback_query_id": "5568951524152467915",
+  "text": "Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!Selection recorded!"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:31:50.795206 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "text": "You clicked the button with data: `select_opt1` 🔥"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:31:50.978063 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786716113,
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 590,
+    "text": "You clicked the button with data: `select_opt1` 🔥"
+  }
+}
+--------------------------------------------------------------------------------

@@ -1,0 +1,64 @@
+package main
+
+// import (
+// 	"fmt"
+// 	"log"
+
+// 	"github.com/casbin/casbin/v3"
+// )
+
+// func main() {
+
+// 	e, err := casbin.NewEnforcer("model.conf")
+// 	if err != nil {
+// 		log.Fatalf("Failed to create enforcer: %v", err)
+// 	}
+
+// 	_, _ = e.AddPolicy("admin", "main.exe", "iran", "in", "allow")
+// 	_, _ = e.AddPolicy("admin", "web.exe", "iran", "out", "allow")
+// 	_, _ = e.AddPolicy("10.10.10.10", "main.exe", "iran", "in", "deny") // explicitly
+// 	_, _ = e.AddPolicy("user", "browser.exe", "iran", "out", "allow")
+
+// 	_, _ = e.AddRoleForUser("97.97.97.97", "admin")
+// 	_, _ = e.AddRoleForUser("10.10.10.10", "admin")
+// 	_, _ = e.AddRoleForUser("192.168.1.50", "user")
+
+// 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 	tests := []struct {
+// 		name      string
+// 		ip        string
+// 		program   string
+// 		location  string
+// 		direction string
+// 		expected  bool
+// 	}{
+// 		{"1. Admin IP - Match All", "97.97.97.97", "main.exe", "iran", "in", true},
+// 		{"2. Admin IP - Wrong Program", "97.97.97.97", "unknown.exe", "iran", "in", false},
+// 		{"3. Admin IP - Wrong Location", "97.97.97.97", "main.exe", "germany", "in", false},
+// 		{"4. Admin IP - Explicit Deny", "10.10.10.10", "main.exe", "iran", "in", false},
+// 		{"5. User Role - Valid Access", "192.168.1.50", "browser.exe", "iran", "out", true},
+// 		{"6. Unknown IP", "1.1.1.1", "main.exe", "iran", "in", false},
+// 	}
+
+// 	fmt.Println("=== CASBIN TEST SUITE RESULTS ===")
+// 	for _, tc := range tests {
+// 		allowed, err := e.Enforce(tc.ip, tc.program, tc.location, tc.direction)
+// 		if err != nil {
+// 			log.Printf("Enforce error on %s: %v", tc.name, err)
+// 			continue
+// 		}
+
+// 		status := "DENIED"
+// 		if allowed {
+// 			status = "ALLOWED"
+// 		}
+
+// 		passStr := "❌ FAIL"
+// 		if allowed == tc.expected {
+// 			passStr = "✅ PASS"
+// 		}
+
+// 		fmt.Printf("%s | %-30s | Got: %-7s | Expected: %t\n", passStr, tc.name, status, tc.expected)
+// 	}
+// }

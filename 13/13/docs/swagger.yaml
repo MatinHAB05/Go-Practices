@@ -1,0 +1,341 @@
+definitions:
+  models.Actor:
+    properties:
+      id:
+        type: integer
+      movies:
+        items:
+          type: integer
+        type: array
+      name:
+        type: string
+    type: object
+  models.Movie:
+    properties:
+      actors:
+        items:
+          type: integer
+        type: array
+      id:
+        type: integer
+      quality:
+        $ref: '#/definitions/models.VideoQuality'
+      releaseYear:
+        type: integer
+      title:
+        type: string
+    type: object
+  models.VideoQuality:
+    enum:
+    - 720p
+    - 1080p
+    - 4K
+    type: string
+    x-enum-varnames:
+    - HD
+    - FHD
+    - FOUR_K
+info:
+  contact: {}
+paths:
+  /movie/rem-movie:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a movie using its ID
+      parameters:
+      - description: Movie ID
+        in: body
+        name: movie
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Movie'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: Remove a movie
+      tags:
+      - movies
+  /v0/cast/add-cast:
+    post:
+      consumes:
+      - application/json
+      description: Create a new actor/cast member
+      parameters:
+      - description: Cast data
+        in: body
+        name: cast
+        required: true
+        schema:
+          $ref: '#/definitions/models.Actor'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Actor'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: Add a new cast member
+      tags:
+      - cast
+  /v0/cast/rem-cast:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a cast member using its ID
+      parameters:
+      - description: Cast ID
+        in: body
+        name: cast
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Actor'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: Remove a cast member
+      tags:
+      - cast
+  /v0/cast/show:
+    get:
+      consumes:
+      - application/json
+      description: Get cast members filtered by name
+      parameters:
+      - description: Actor name
+        in: query
+        name: name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Actor'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Filter cast members
+      tags:
+      - cast
+  /v0/cast/show-all:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of all actors/cast members
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Actor'
+            type: array
+      summary: Get all cast members
+      tags:
+      - cast
+  /v0/cast/show/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a single actor/cast member using its ID
+      parameters:
+      - description: Cast ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Actor'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get cast member by ID
+      tags:
+      - cast
+  /v0/movie-cast-link/:
+    post:
+      consumes:
+      - application/json
+      description: Create a relation between an actor and a movie using their IDs
+      parameters:
+      - description: Actor-Movie linking payload (actor-id, movie-id)
+        in: body
+        name: link
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Movie and Actor if linked successfully
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Binding error
+          schema:
+            type: string
+      summary: Link actor to movie
+      tags:
+      - linking
+  /v0/movie/add-movie:
+    post:
+      consumes:
+      - application/json
+      description: Create a new movie using the provided data
+      parameters:
+      - description: Movie data
+        in: body
+        name: movie
+        required: true
+        schema:
+          $ref: '#/definitions/models.Movie'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Movie'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      summary: Add a new movie
+      tags:
+      - movies
+  /v0/movie/show:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve movies using optional filters such as title, release year
+        comparison, and quality
+      parameters:
+      - description: Movie title
+        in: query
+        name: title
+        type: string
+      - description: Release year
+        in: query
+        name: release
+        type: integer
+      - description: Release year comparator (e.g. >, <, =, <=, >=)
+        in: query
+        name: release-action
+        type: string
+      - description: Movie quality
+        in: query
+        name: quality
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Movie'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Filter movies
+      tags:
+      - movies
+  /v0/movie/show-all:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of all movies
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Movie'
+            type: array
+      summary: Get all movies
+      tags:
+      - movies
+  /v0/movie/show/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a single movie using its ID
+      parameters:
+      - description: Movie ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Movie'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get movie by ID
+      tags:
+      - movies
+swagger: "2.0"

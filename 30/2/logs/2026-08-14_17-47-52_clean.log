@@ -1,0 +1,140 @@
+2026/08/14 17:47:52.213975 request url: https://api.telegram.org/bot***/getMe, payload: null
+2026/08/14 17:47:52.848598 response from 'https://api.telegram.org/bot***/getMe' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "allows_users_to_create_topics": false,
+    "can_connect_to_business": false,
+    "can_join_groups": true,
+    "can_manage_bots": false,
+    "can_read_all_group_messages": false,
+    "first_name": "AS7",
+    "has_main_web_app": false,
+    "has_topics_enabled": false,
+    "id": 7777388555,
+    "is_bot": true,
+    "supports_guest_queries": false,
+    "supports_inline_queries": true,
+    "supports_join_request_queries": false,
+    "username": "AS777_77_bot"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:47:52.970798 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "message": {
+        "chat": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "last_name": "HAB",
+          "type": "private",
+          "username": "MHB2005"
+        },
+        "date": 1786717071,
+        "entities": [
+          {
+            "length": 9,
+            "offset": 0,
+            "type": "bot_command"
+          }
+        ],
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "message_id": 599,
+        "text": "/progress"
+      },
+      "update_id": 712567632
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:47:52.977299 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "text": "0 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:47:53.134373 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786717075,
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 600,
+    "text": "0 %"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:47:54.134888 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 599,
+  "message_id": 600,
+  "text": "0 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:47:56.335578 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 599,
+  "message_id": 600,
+  "text": "25 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:47:58.482025 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 599,
+  "message_id": 600,
+  "text": "50 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:47:58.680848 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 599,
+  "message_id": 600,
+  "text": "65 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:48:00.860176 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 599,
+  "message_id": 600,
+  "text": "80 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:48:02.032999 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 599,
+  "message_id": 600,
+  "text": "100 %"
+}
+--------------------------------------------------------------------------------

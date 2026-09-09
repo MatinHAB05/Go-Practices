@@ -1,0 +1,24 @@
+
+services:
+  minio:
+    image: minio/minio:RELEASE.2024-01-16T16-07-38Z # یا آخرین تگ minio/minio
+    container_name: minio_server
+    restart: always
+    ports:
+      - "9000:9000" # پورت S3 API (برای اتصال کد Go و mc)
+      - "9001:9001" # پورت Dashboard/Console وب
+    environment:
+      MINIO_ROOT_USER: "minioadmin" # همان Access Key
+      MINIO_ROOT_PASSWORD: "minioadmin" # همان Secret Key
+    volumes:
+      - minio_data:/data # مسیر ذخیره‌سازی داده‌ها
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  minio_data:
+    driver: local

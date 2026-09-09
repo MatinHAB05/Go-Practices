@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>تست کپچا روی Localhost</title>
+    <!-- این ی سری جنگولک بازی ها داره که ی سری دیتاهارو میده دست گوگل تا وقتی درخواست توکن کرد  همراه با اون ی امتیازی بین 0 تا 1 هم بده هر چقدر بالاتر انسانتر و هرچی پایین تر مشکوک تر و رباتی تر
+     توی بک هم میشه این امتیاز رو گرفت و درخواست طرف رو بلاک کرد یا هر کاری دیگ و در غیر این صورت تو هم پاسش بدی به گوگل و القصع -->
+    <script src="https://www.google.com/recaptcha/api.js?render=PUBLIC"></script>
+    <!-- از توی لینک دوم پیداش کن --->
+  </head>
+  <body>
+    <h2>فرم ورود</h2>
+    <form id="loginForm">
+      <input
+        type="text"
+        id="username"
+        placeholder="نام کاربری"
+        required
+      /><br /><br />
+      <input
+        type="password"
+        id="password"
+        placeholder="رمز عبور"
+        required
+      /><br /><br />
+      <button type="submit">ورود</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+      const SITE_KEY = "PUBLIC";
+
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // ۲. درخواست توکن از گوگل
+          grecaptcha.ready(function () {
+            grecaptcha
+              .execute(SITE_KEY, { action: "login" })
+              .then(function (token) {
+                // ۳. ارسال توکن به بک‌اند Go
+                console.log(token);
+                fetch("http://localhost:8080/api/login", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    username: document.getElementById("username").value,
+                    password: document.getElementById("password").value,
+                    recaptcha_token: token,
+                  }),
+                })
+                  .then((res) => res.json())
+                  .then((data) => {
+                    document.getElementById("result").innerText =
+                      JSON.stringify(data, null, 2);
+                  });
+              });
+          });
+        });
+    </script>
+  </body>
+</html>

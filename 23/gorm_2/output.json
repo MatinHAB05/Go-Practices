@@ -1,0 +1,1989 @@
+[
+ {
+  "id": 1,
+  "created_at": "2026-04-11T16:08:18+03:30",
+  "updated_at": "2026-04-11T16:08:18+03:30",
+  "deleted_at": null,
+  "code": "B001",
+  "name": "Melli",
+  "address": "Tehran",
+  "branches": [
+   {
+    "id": 1,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B001",
+    "branch_number": "101",
+    "address": "Tehran Tajrish",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 1,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B001",
+      "acc_branch_number": "101",
+      "account_number": "A1001",
+      "balance": 500000,
+      "type": "pro",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 1,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B001",
+        "ca_account_number": "A1001",
+        "ca_branch_number": "101",
+        "ca_customer_ssn": "1000000001",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     },
+     {
+      "id": 2,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B001",
+      "acc_branch_number": "101",
+      "account_number": "A1002",
+      "balance": 750000,
+      "type": "pro-max",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 2,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B001",
+        "ca_account_number": "A1002",
+        "ca_branch_number": "101",
+        "ca_customer_ssn": "1000000002",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   },
+   {
+    "id": 2,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B001",
+    "branch_number": "102",
+    "address": "Tehran Vanak",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 3,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B001",
+      "acc_branch_number": "102",
+      "account_number": "A1003",
+      "balance": 200000,
+      "type": "trial",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 3,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B001",
+        "ca_account_number": "A1003",
+        "ca_branch_number": "102",
+        "ca_customer_ssn": "1000000003",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     },
+     {
+      "id": 4,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B001",
+      "acc_branch_number": "102",
+      "account_number": "A1004",
+      "balance": 1200000,
+      "type": "pro-max",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 4,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B001",
+        "ca_account_number": "A1004",
+        "ca_branch_number": "102",
+        "ca_customer_ssn": "1000000004",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   },
+   {
+    "id": 3,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B001",
+    "branch_number": "103",
+    "address": "Tehran Shariati",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 5,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B001",
+      "acc_branch_number": "103",
+      "account_number": "A1005",
+      "balance": 950000,
+      "type": "pro",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 5,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B001",
+        "ca_account_number": "A1005",
+        "ca_branch_number": "103",
+        "ca_customer_ssn": "1000000005",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "created_at": "2026-04-11T16:08:18+03:30",
+  "updated_at": "2026-04-11T16:08:18+03:30",
+  "deleted_at": null,
+  "code": "B002",
+  "name": "Saderat",
+  "address": "Tehran",
+  "branches": [
+   {
+    "id": 4,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B002",
+    "branch_number": "201",
+    "address": "Shiraz Center",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 6,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B002",
+      "acc_branch_number": "201",
+      "account_number": "A2001",
+      "balance": 300000,
+      "type": "limited",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 6,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B002",
+        "ca_account_number": "A2001",
+        "ca_branch_number": "201",
+        "ca_customer_ssn": "1000000006",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     },
+     {
+      "id": 7,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B002",
+      "acc_branch_number": "201",
+      "account_number": "A2002",
+      "balance": 840000,
+      "type": "pro",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 7,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B002",
+        "ca_account_number": "A2002",
+        "ca_branch_number": "201",
+        "ca_customer_ssn": "1000000007",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   },
+   {
+    "id": 5,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B002",
+    "branch_number": "202",
+    "address": "Shiraz Zand",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 8,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B002",
+      "acc_branch_number": "202",
+      "account_number": "A2003",
+      "balance": 1500000,
+      "type": "pro-max",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 8,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B002",
+        "ca_account_number": "A2003",
+        "ca_branch_number": "202",
+        "ca_customer_ssn": "1000000008",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   },
+   {
+    "id": 6,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B002",
+    "branch_number": "203",
+    "address": "Isfahan Chaharbagh",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 9,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B002",
+      "acc_branch_number": "203",
+      "account_number": "A2004",
+      "balance": 420000,
+      "type": "trial",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 9,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B002",
+        "ca_account_number": "A2004",
+        "ca_branch_number": "203",
+        "ca_customer_ssn": "1000000009",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "created_at": "2026-04-11T16:08:18+03:30",
+  "updated_at": "2026-04-11T16:08:18+03:30",
+  "deleted_at": null,
+  "code": "B003",
+  "name": "Mellat",
+  "address": "Tehran",
+  "branches": [
+   {
+    "id": 7,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B003",
+    "branch_number": "301",
+    "address": "Tehran Azadi",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 10,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B003",
+      "acc_branch_number": "301",
+      "account_number": "A3001",
+      "balance": 980000,
+      "type": "pro",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 10,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B003",
+        "ca_account_number": "A3001",
+        "ca_branch_number": "301",
+        "ca_customer_ssn": "1000000010",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   },
+   {
+    "id": 8,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B003",
+    "branch_number": "302",
+    "address": "Tehran Enghelab",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 11,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B003",
+      "acc_branch_number": "302",
+      "account_number": "A3002",
+      "balance": 670000,
+      "type": "pro",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 11,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B003",
+        "ca_account_number": "A3002",
+        "ca_branch_number": "302",
+        "ca_customer_ssn": "1000000011",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   },
+   {
+    "id": 9,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B003",
+    "branch_number": "303",
+    "address": "Karaj Gohardasht",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 12,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B003",
+      "acc_branch_number": "303",
+      "account_number": "A3003",
+      "balance": 210000,
+      "type": "limited",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 12,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B003",
+        "ca_account_number": "A3003",
+        "ca_branch_number": "303",
+        "ca_customer_ssn": "1000000012",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "created_at": "2026-04-11T16:08:18+03:30",
+  "updated_at": "2026-04-11T16:08:18+03:30",
+  "deleted_at": null,
+  "code": "B004",
+  "name": "Tejarat",
+  "address": "Tehran",
+  "branches": [
+   {
+    "id": 10,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B004",
+    "branch_number": "401",
+    "address": "Tabriz Imam",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 13,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B004",
+      "acc_branch_number": "401",
+      "account_number": "A4001",
+      "balance": 1100000,
+      "type": "pro-max",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 13,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B004",
+        "ca_account_number": "A4001",
+        "ca_branch_number": "401",
+        "ca_customer_ssn": "1000000001",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   },
+   {
+    "id": 11,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B004",
+    "branch_number": "402",
+    "address": "Tabriz Valiasr",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 14,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B004",
+      "acc_branch_number": "402",
+      "account_number": "A4002",
+      "balance": 330000,
+      "type": "trial",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 14,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B004",
+        "ca_account_number": "A4002",
+        "ca_branch_number": "402",
+        "ca_customer_ssn": "1000000002",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   },
+   {
+    "id": 12,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B004",
+    "branch_number": "403",
+    "address": "Mashhad Sajjad",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 15,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B004",
+      "acc_branch_number": "403",
+      "account_number": "A4003",
+      "balance": 450000,
+      "type": "pro",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 15,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B004",
+        "ca_account_number": "A4003",
+        "ca_branch_number": "403",
+        "ca_customer_ssn": "1000000003",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "created_at": "2026-04-11T16:08:18+03:30",
+  "updated_at": "2026-04-11T16:08:18+03:30",
+  "deleted_at": null,
+  "code": "B005",
+  "name": "Parsian",
+  "address": "Tehran",
+  "branches": [
+   {
+    "id": 13,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B005",
+    "branch_number": "501",
+    "address": "Ahvaz Center",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 16,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B005",
+      "acc_branch_number": "501",
+      "account_number": "A5001",
+      "balance": 600000,
+      "type": "pro",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 16,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B005",
+        "ca_account_number": "A5001",
+        "ca_branch_number": "501",
+        "ca_customer_ssn": "1000000004",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   },
+   {
+    "id": 14,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B005",
+    "branch_number": "502",
+    "address": "Ahvaz Kianpars",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 17,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B005",
+      "acc_branch_number": "502",
+      "account_number": "A5002",
+      "balance": 730000,
+      "type": "pro-max",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 17,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B005",
+        "ca_account_number": "A5002",
+        "ca_branch_number": "502",
+        "ca_customer_ssn": "1000000005",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   },
+   {
+    "id": 15,
+    "created_at": "2026-04-11T16:08:18+03:30",
+    "updated_at": "2026-04-11T16:08:18+03:30",
+    "deleted_at": null,
+    "branch_bank_code": "B005",
+    "branch_number": "503",
+    "address": "Qom Haram",
+    "bank": {
+     "id": 0,
+     "created_at": "0001-01-01T00:00:00Z",
+     "updated_at": "0001-01-01T00:00:00Z",
+     "deleted_at": null,
+     "code": "",
+     "name": "",
+     "address": "",
+     "branches": null
+    },
+    "accounts": [
+     {
+      "id": 18,
+      "created_at": "2026-04-11T16:08:18+03:30",
+      "updated_at": "2026-04-11T16:08:18+03:30",
+      "deleted_at": null,
+      "acc_bank_code": "B005",
+      "acc_branch_number": "503",
+      "account_number": "A5003",
+      "balance": 280000,
+      "type": "trial",
+      "branch": {
+       "id": 0,
+       "created_at": "0001-01-01T00:00:00Z",
+       "updated_at": "0001-01-01T00:00:00Z",
+       "deleted_at": null,
+       "branch_bank_code": "",
+       "branch_number": "",
+       "address": "",
+       "bank": {
+        "id": 0,
+        "created_at": "0001-01-01T00:00:00Z",
+        "updated_at": "0001-01-01T00:00:00Z",
+        "deleted_at": null,
+        "code": "",
+        "name": "",
+        "address": "",
+        "branches": null
+       },
+       "accounts": null,
+       "loans": null
+      },
+      "customer_accounts": [
+       {
+        "id": 18,
+        "created_at": "2026-04-11T16:08:18+03:30",
+        "updated_at": "2026-04-11T16:08:18+03:30",
+        "deleted_at": null,
+        "ca_bank_code": "B005",
+        "ca_account_number": "A5003",
+        "ca_branch_number": "503",
+        "ca_customer_ssn": "1000000006",
+        "customer": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "ssn": "",
+         "name": "",
+         "address": "",
+         "phone": "",
+         "customer_accounts": null,
+         "customer_loans": null
+        },
+        "account": {
+         "id": 0,
+         "created_at": "0001-01-01T00:00:00Z",
+         "updated_at": "0001-01-01T00:00:00Z",
+         "deleted_at": null,
+         "acc_bank_code": "",
+         "acc_branch_number": "",
+         "account_number": "",
+         "balance": 0,
+         "type": "",
+         "branch": {
+          "id": 0,
+          "created_at": "0001-01-01T00:00:00Z",
+          "updated_at": "0001-01-01T00:00:00Z",
+          "deleted_at": null,
+          "branch_bank_code": "",
+          "branch_number": "",
+          "address": "",
+          "bank": {
+           "id": 0,
+           "created_at": "0001-01-01T00:00:00Z",
+           "updated_at": "0001-01-01T00:00:00Z",
+           "deleted_at": null,
+           "code": "",
+           "name": "",
+           "address": "",
+           "branches": null
+          },
+          "accounts": null,
+          "loans": null
+         },
+         "customer_accounts": null
+        }
+       }
+      ]
+     }
+    ],
+    "loans": null
+   }
+  ]
+ }
+]

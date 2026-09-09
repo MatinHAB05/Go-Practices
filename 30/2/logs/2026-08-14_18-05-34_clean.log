@@ -1,0 +1,242 @@
+2026/08/14 18:05:34.793934 request url: https://api.telegram.org/bot***/getMe, payload: null
+2026/08/14 18:05:35.386008 response from 'https://api.telegram.org/bot***/getMe' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "allows_users_to_create_topics": false,
+    "can_connect_to_business": false,
+    "can_join_groups": true,
+    "can_manage_bots": false,
+    "can_read_all_group_messages": false,
+    "first_name": "AS7",
+    "has_main_web_app": false,
+    "has_topics_enabled": false,
+    "id": 7777388555,
+    "is_bot": true,
+    "supports_guest_queries": false,
+    "supports_inline_queries": true,
+    "supports_join_request_queries": false,
+    "username": "AS777_77_bot"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:36.649059 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "message": {
+        "chat": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "last_name": "HAB",
+          "type": "private",
+          "username": "MHB2005"
+        },
+        "date": 1786718139,
+        "entities": [
+          {
+            "length": 8,
+            "offset": 0,
+            "type": "bot_command"
+          }
+        ],
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "message_id": 603,
+        "text": "/salavat"
+      },
+      "update_id": 712567634
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:36.654335 request url: https://api.telegram.org/bot***/sendMessageDraft, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "draft_id": "1786718136653628600",
+  "text": "Hello! I am  ▌"
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:36.804251 response from 'https://api.telegram.org/bot***/sendMessageDraft' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:37.004863 request url: https://api.telegram.org/bot***/sendMessageDraft, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "draft_id": "1786718136653628600",
+  "text": "Hello! I am an AI assistant.  ▌"
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:37.148695 response from 'https://api.telegram.org/bot***/sendMessageDraft' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:37.349857 request url: https://api.telegram.org/bot***/sendMessageDraft, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "draft_id": "1786718136653628600",
+  "text": "Hello! I am an AI assistant. I can help  ▌"
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:37.540702 response from 'https://api.telegram.org/bot***/sendMessageDraft' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:37.742419 request url: https://api.telegram.org/bot***/sendMessageDraft, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "draft_id": "1786718136653628600",
+  "text": "Hello! I am an AI assistant. I can help you with many  ▌"
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:37.947929 response from 'https://api.telegram.org/bot***/sendMessageDraft' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:38.149176 request url: https://api.telegram.org/bot***/sendMessageDraft, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "draft_id": "1786718136653628600",
+  "text": "Hello! I am an AI assistant. I can help you with many tasks, such as  ▌"
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:38.279093 response from 'https://api.telegram.org/bot***/sendMessageDraft' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:38.480283 request url: https://api.telegram.org/bot***/sendMessageDraft, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "draft_id": "1786718136653628600",
+  "text": "Hello! I am an AI assistant. I can help you with many tasks, such as answering questions, writing  ▌"
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:38.653109 response from 'https://api.telegram.org/bot***/sendMessageDraft' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:38.854640 request url: https://api.telegram.org/bot***/sendMessageDraft, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "draft_id": "1786718136653628600",
+  "text": "Hello! I am an AI assistant. I can help you with many tasks, such as answering questions, writing code, and having  ▌"
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:38.997824 response from 'https://api.telegram.org/bot***/sendMessageDraft' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:39.198640 request url: https://api.telegram.org/bot***/sendMessageDraft, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "draft_id": "1786718136653628600",
+  "text": "Hello! I am an AI assistant. I can help you with many tasks, such as answering questions, writing code, and having conversations. How can  ▌"
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:39.347676 response from 'https://api.telegram.org/bot***/sendMessageDraft' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:39.549872 request url: https://api.telegram.org/bot***/sendMessageDraft, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "draft_id": "1786718136653628600",
+  "text": "Hello! I am an AI assistant. I can help you with many tasks, such as answering questions, writing code, and having conversations. How can I assist you  ▌"
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:39.724495 response from 'https://api.telegram.org/bot***/sendMessageDraft' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:39.925784 request url: https://api.telegram.org/bot***/sendMessageDraft, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "draft_id": "1786718136653628600",
+  "text": "Hello! I am an AI assistant. I can help you with many tasks, such as answering questions, writing code, and having conversations. How can I assist you today?"
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:40.143568 response from 'https://api.telegram.org/bot***/sendMessageDraft' with payload '
+Payload:
+{
+  "ok": true,
+  "result": true
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:40.345017 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "text": "Hello! I am an AI assistant. I can help you with many tasks, such as answering questions, writing code, and having conversations. How can I assist you today?"
+}
+--------------------------------------------------------------------------------
+2026/08/14 18:05:40.600571 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786718143,
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 604,
+    "text": "Hello! I am an AI assistant. I can help you with many tasks, such as answering questions, writing code, and having conversations. How can I assist you today?"
+  }
+}
+--------------------------------------------------------------------------------

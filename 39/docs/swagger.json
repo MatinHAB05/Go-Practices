@@ -1,0 +1,883 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "REST API for managing movies and casts",
+        "title": "Movie App API",
+        "termsOfService": "https://No-Where-Be-Allah-Ghasam-1",
+        "contact": {
+            "name": "Matin Hasanali Baki ( Matin HAB )",
+            "url": "https://No-Where-Be-Allah-Ghasam-2",
+            "email": "m9652973@gmail.com"
+        },
+        "license": {
+            "name": "Apache 9797.0",
+            "url": "https://No-Where-Be-Allah-Ghasam-3"
+        },
+        "version": "0.0"
+    },
+    "host": "localhost:8097",
+    "basePath": "/api/v0",
+    "paths": {
+        "/cast/add-cast": {
+            "post": {
+                "description": "Add a new cast",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Casts"
+                ],
+                "summary": "Create a new cast",
+                "parameters": [
+                    {
+                        "description": "Cast Data",
+                        "name": "cast",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/bindparam.CreateCastRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/cast/rem-cast": {
+            "delete": {
+                "description": "Remove a cast by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Casts"
+                ],
+                "summary": "Delete a cast",
+                "parameters": [
+                    {
+                        "description": "Cast ID",
+                        "name": "id",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/bindparam.RemoveCastByIdRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/cast/show": {
+            "get": {
+                "description": "Filter casts by name",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Casts"
+                ],
+                "summary": "Filter casts",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Cast name prefix",
+                        "name": "name",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/cast/show-all": {
+            "get": {
+                "description": "Get all casts",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Casts"
+                ],
+                "summary": "List all casts",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/cast/show/{id}": {
+            "get": {
+                "description": "Retrieve a cast by its ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Casts"
+                ],
+                "summary": "Get cast by ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Cast ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/info": {
+            "get": {
+                "description": "Returns basic contact and professional info about the developer",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Info"
+                ],
+                "summary": "Get developer information",
+                "responses": {
+                    "200": {
+                        "description": "Developer info details",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/inspiration": {
+            "get": {
+                "description": "Redirects the client to the Quera problem page that inspired this project",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Info"
+                ],
+                "summary": "Redirect to inspiration source",
+                "responses": {
+                    "301": {
+                        "description": "Moved Permanently",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/movie-cast/": {
+            "get": {
+                "description": "Returns the list of all movie and cast relationships",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "MovieCast"
+                ],
+                "summary": "Get all movie-cast relations",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create relation between a movie and a cast",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "MovieCast"
+                ],
+                "summary": "Link movie to cast",
+                "parameters": [
+                    {
+                        "description": "Movie Cast Link",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/bindparam.LinkMovie2CastRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/movie-cast/movie/{movie_id}/cast/{cast_id}": {
+            "get": {
+                "description": "Returns the relationship between a specific movie and cast member",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "MovieCast"
+                ],
+                "summary": "Get movie-cast relation by movie ID and cast ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Movie ID",
+                        "name": "movie_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Cast ID",
+                        "name": "cast_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes the relationship between a specific movie and cast member",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "MovieCast"
+                ],
+                "summary": "Delete movie-cast relation by movie ID and cast ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Movie ID",
+                        "name": "movie_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Cast ID",
+                        "name": "cast_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/movie-cast/{id}": {
+            "get": {
+                "description": "Returns a specific movie-cast relationship using its ID",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "MovieCast"
+                ],
+                "summary": "Get movie-cast relation by ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "MovieCast ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Deletes a movie-cast relationship using its ID",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "MovieCast"
+                ],
+                "summary": "Delete movie-cast relation by ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "MovieCast ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/movie/add-movie": {
+            "post": {
+                "description": "Add a new movie to the system",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Create a new movie",
+                "parameters": [
+                    {
+                        "description": "Movie data",
+                        "name": "movie",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/bindparam.CreateMovieRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/movie/rem-movie": {
+            "delete": {
+                "description": "Remove a movie by its ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Delete a movie",
+                "parameters": [
+                    {
+                        "description": "Movie ID",
+                        "name": "id",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/bindparam.RemoveMovieByIdRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/movie/show": {
+            "get": {
+                "description": "Get movies with optional filters",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Filter movies",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Movie title",
+                        "name": "title",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Movie quality",
+                        "name": "quality",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Release year",
+                        "name": "release",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Release filter action (gr, ls, eq, grq, lse, neq)",
+                        "name": "release-action",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/movie/show-all": {
+            "get": {
+                "description": "Get list of all movies",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Get all movies",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        },
+        "/movie/show/{id}": {
+            "get": {
+                "description": "Retrieve a single movie using its ID from URI",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Get movie by ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Movie ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/baseresponse.Response"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "baseresponse.Response": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string"
+                },
+                "result": {},
+                "success": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "bindparam.CreateCastRequest": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "bindparam.CreateMovieRequest": {
+            "type": "object",
+            "properties": {
+                "quality": {
+                    "$ref": "#/definitions/entity.VideoQuality"
+                },
+                "releaseYear": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "bindparam.LinkMovie2CastRequest": {
+            "type": "object",
+            "required": [
+                "cast-id",
+                "movie-id"
+            ],
+            "properties": {
+                "cast-id": {
+                    "type": "integer"
+                },
+                "movie-id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "bindparam.RemoveCastByIdRequest": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "bindparam.RemoveMovieByIdRequest": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "entity.VideoQuality": {
+            "type": "string",
+            "enum": [
+                "720p",
+                "1080p",
+                "4K"
+            ],
+            "x-enum-varnames": [
+                "HD",
+                "FHD",
+                "FOUR_K"
+            ]
+        }
+    }
+}

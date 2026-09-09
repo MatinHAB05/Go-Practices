@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebSocket Client</title>
+  </head>
+  <body>
+    <h1>WebSocket Client</h1>
+    <div>
+      <input type="text" id="messageInput" placeholder="Enter your message" />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+    <div id="messages"></div>
+    <script>
+      let ws = null;
+
+      function connect() {
+        // اگر از قبل اتصالی باز است، دوباره وصل نشو
+        if (
+          ws &&
+          (ws.readyState === WebSocket.OPEN ||
+            ws.readyState === WebSocket.CONNECTING)
+        ) {
+          return;
+        }
+
+        ws = new WebSocket("ws://localhost:8080/ws");
+
+        ws.onopen = function () {
+          console.log("Connected to WebSocket server");
+        };
+
+        ws.onmessage = function (event) {
+          let messageDisplay = document.getElementById("messages");
+          messageDisplay.innerHTML += `<p>${event.data}</p>`;
+        };
+
+        ws.onclose = function (event) {
+          console.log("Connection closed code:", event.code);
+          // فقط اگر خروج غیرعادی بود ری‌کانکت شو
+          if (event.code !== 1000) {
+            setTimeout(connect, 2000);
+          }
+        };
+
+        ws.onerror = function (error) {
+          console.error("WebSocket error:", error);
+        };
+      }
+
+      function sendMessage() {
+        let input = document.getElementById("messageInput");
+        if (ws && ws.readyState === WebSocket.OPEN) {
+          ws.send(input.value);
+          input.value = "";
+        }
+      }
+
+      // شروع اولین اتصال
+      connect();
+    </script>
+  </body>
+</html>

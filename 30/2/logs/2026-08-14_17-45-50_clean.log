@@ -1,0 +1,259 @@
+2026/08/14 17:45:50.620174 request url: https://api.telegram.org/bot***/getMe, payload: null
+2026/08/14 17:45:51.457081 response from 'https://api.telegram.org/bot***/getMe' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "allows_users_to_create_topics": false,
+    "can_connect_to_business": false,
+    "can_join_groups": true,
+    "can_manage_bots": false,
+    "can_read_all_group_messages": false,
+    "first_name": "AS7",
+    "has_main_web_app": false,
+    "has_topics_enabled": false,
+    "id": 7777388555,
+    "is_bot": true,
+    "supports_guest_queries": false,
+    "supports_inline_queries": true,
+    "supports_join_request_queries": false,
+    "username": "AS777_77_bot"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:45:51.584004 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "message": {
+        "chat": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "last_name": "HAB",
+          "type": "private",
+          "username": "MHB2005"
+        },
+        "date": 1786716933,
+        "entities": [
+          {
+            "length": 6,
+            "offset": 0,
+            "type": "bot_command"
+          }
+        ],
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "message_id": 591,
+        "text": "/start"
+      },
+      "update_id": 712567628
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:45:51.585875 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "reply_markup": {
+    "inline_keyboard": [
+      [
+        {
+          "callback_data": "select_opt1",
+          "text": "Option 1 🟢"
+        },
+        {
+          "callback_data": "select_opt2",
+          "text": "Option 2 🔵"
+        }
+      ]
+    ]
+  },
+  "text": "Hello! Welcome to the test bot. Please select an option:"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:45:51.796747 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786716954,
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 592,
+    "reply_markup": {
+      "inline_keyboard": [
+        [
+          {
+            "callback_data": "select_opt1",
+            "text": "Option 1 🟢"
+          },
+          {
+            "callback_data": "select_opt2",
+            "text": "Option 2 🔵"
+          }
+        ]
+      ]
+    },
+    "text": "Hello! Welcome to the test bot. Please select an option:"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:00.143948 response from 'https://api.telegram.org/bot***/getUpdates' with payload '
+Payload:
+{
+  "ok": true,
+  "result": [
+    {
+      "message": {
+        "chat": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "last_name": "HAB",
+          "type": "private",
+          "username": "MHB2005"
+        },
+        "date": 1786716962,
+        "entities": [
+          {
+            "length": 9,
+            "offset": 0,
+            "type": "bot_command"
+          }
+        ],
+        "from": {
+          "first_name": "Matin",
+          "id": 5591589863,
+          "is_bot": false,
+          "language_code": "en",
+          "last_name": "HAB",
+          "username": "MHB2005"
+        },
+        "message_id": 593,
+        "text": "/progress"
+      },
+      "update_id": 712567629
+    }
+  ]
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:00.144467 request url: https://api.telegram.org/bot***/sendMessage, payload:
+Payload:
+{
+  "chat_id": 5591589863,
+  "text": "0 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:00.294152 response from 'https://api.telegram.org/bot***/sendMessage' with payload '
+Payload:
+{
+  "ok": true,
+  "result": {
+    "chat": {
+      "first_name": "Matin",
+      "id": 5591589863,
+      "last_name": "HAB",
+      "type": "private",
+      "username": "MHB2005"
+    },
+    "date": 1786716962,
+    "from": {
+      "first_name": "AS7",
+      "id": 7777388555,
+      "is_bot": true,
+      "username": "AS777_77_bot"
+    },
+    "message_id": 594,
+    "text": "0 %"
+  }
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:01.295128 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 593,
+  "text": "25 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:03.577109 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 593,
+  "text": "30 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:03.831734 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 593,
+  "text": "30 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:04.035225 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 593,
+  "text": "35 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:06.290908 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 593,
+  "text": "35 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:06.450149 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 593,
+  "text": "60 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:07.649759 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 593,
+  "text": "75 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:08.852522 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 593,
+  "text": "90 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:09.065230 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 593,
+  "text": "95 %"
+}
+--------------------------------------------------------------------------------
+2026/08/14 17:46:11.355854 request url: https://api.telegram.org/bot***/editMessageText, payload:
+Payload:
+{
+  "chat_id": 593,
+  "text": "115 %"
+}
+--------------------------------------------------------------------------------

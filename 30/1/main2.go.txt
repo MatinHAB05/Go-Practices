@@ -1,0 +1,87 @@
+package main
+
+import (
+	"log"
+
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	"github.com/spf13/viper"
+)
+
+type Config struct {
+	Token string `mapstructure:"TOKEN"`
+}
+
+func main() {
+	// Retrieve the API token from environment variables
+	viper.AddConfigPath("..")
+	viper.SetConfigType("env")
+	viper.SetConfigFile(".env")
+
+	err := viper.ReadInConfig()
+	if err != nil {
+		log.Fatal("ERR", err)
+	}
+
+	var cfg Config
+	if err := viper.Unmarshal(&cfg); err != nil {
+		log.Fatal("ERR", err)
+
+	}
+
+	apiToken := cfg.Token
+
+	// Initialize the bot client
+	bot, err := tgbotapi.NewBotAPI(apiToken)
+	if err != nil {
+		log.Panic(err)
+	}
+
+	// Enable debug output to print requests/responses in console
+	bot.Debug = true
+
+	log.Printf("Authorized on account %s", bot.Self.UserName)
+
+	// Configure polling settings
+	updateConfig := tgbotapi.NewUpdate(0)
+	updateConfig.Timeout = 60 // Long polling timeout in seconds
+
+	// Get a channel for receiving updates
+	updates := bot.GetUpdatesChan(updateConfig)
+
+	// Iterate over incoming updates
+	for update := range updates {
+		// Ignore any non-message updates
+		if update.Message == nil {
+			continue
+		}
+
+		// Process commands starting with '/'
+		if update.Message.IsCommand() {
+			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "")
+			switch update.Message.Command() {
+			case "start":
+				msg.Text = "Welcome! I am your new Go bot."
+			case "help":
+				msg.Text = "Send me any message, and I'll echo it back to you!"
+			default:
+				msg.Text = "I don't know that command."
+			}
+
+			if _, err := bot.Send(msg); err != nil {
+				log.Printf("Failed to send message: %v", err)
+			}
+			continue
+		}
+
+		// Echo non-command text messages back
+		replyText := "You said: " + update.Message.Text
+		msg := tgbotapi.NewMessage(update.Message.Chat.ID, replyText)
+
+		// Set reply parameter to thread responses
+		msg.ReplyToMessageID = update.Message.MessageID
+
+		if _, err := bot.Send(msg); err != nil {
+			log.Printf("Failed to send message: %v", err)
+		}
+	}
+}

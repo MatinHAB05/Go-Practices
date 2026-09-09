@@ -1,0 +1,584 @@
+basePath: /api/v0
+definitions:
+  baseresponse.Response:
+    properties:
+      error:
+        type: string
+      result: {}
+      success:
+        type: boolean
+    type: object
+  bindparam.CreateCastRequest:
+    properties:
+      name:
+        type: string
+    type: object
+  bindparam.CreateMovieRequest:
+    properties:
+      quality:
+        $ref: '#/definitions/entity.VideoQuality'
+      releaseYear:
+        type: integer
+      title:
+        type: string
+    type: object
+  bindparam.LinkMovie2CastRequest:
+    properties:
+      cast-id:
+        type: integer
+      movie-id:
+        type: integer
+    required:
+    - cast-id
+    - movie-id
+    type: object
+  bindparam.RemoveCastByIdRequest:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  bindparam.RemoveMovieByIdRequest:
+    properties:
+      id:
+        type: integer
+    required:
+    - id
+    type: object
+  entity.VideoQuality:
+    enum:
+    - 720p
+    - 1080p
+    - 4K
+    type: string
+    x-enum-varnames:
+    - HD
+    - FHD
+    - FOUR_K
+host: localhost:8097
+info:
+  contact:
+    email: m9652973@gmail.com
+    name: Matin Hasanali Baki ( Matin HAB )
+    url: https://No-Where-Be-Allah-Ghasam-2
+  description: REST API for managing movies and casts
+  license:
+    name: Apache 9797.0
+    url: https://No-Where-Be-Allah-Ghasam-3
+  termsOfService: https://No-Where-Be-Allah-Ghasam-1
+  title: Movie App API
+  version: "0.0"
+paths:
+  /cast/add-cast:
+    post:
+      consumes:
+      - application/json
+      description: Add a new cast
+      parameters:
+      - description: Cast Data
+        in: body
+        name: cast
+        required: true
+        schema:
+          $ref: '#/definitions/bindparam.CreateCastRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Create a new cast
+      tags:
+      - Casts
+  /cast/rem-cast:
+    delete:
+      consumes:
+      - application/json
+      description: Remove a cast by ID
+      parameters:
+      - description: Cast ID
+        in: body
+        name: id
+        required: true
+        schema:
+          $ref: '#/definitions/bindparam.RemoveCastByIdRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Delete a cast
+      tags:
+      - Casts
+  /cast/show:
+    get:
+      consumes:
+      - application/json
+      description: Filter casts by name
+      parameters:
+      - description: Cast name prefix
+        in: query
+        name: name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Filter casts
+      tags:
+      - Casts
+  /cast/show-all:
+    get:
+      consumes:
+      - application/json
+      description: Get all casts
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: List all casts
+      tags:
+      - Casts
+  /cast/show/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a cast by its ID
+      parameters:
+      - description: Cast ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Get cast by ID
+      tags:
+      - Casts
+  /info:
+    get:
+      description: Returns basic contact and professional info about the developer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Developer info details
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get developer information
+      tags:
+      - Info
+  /inspiration:
+    get:
+      description: Redirects the client to the Quera problem page that inspired this
+        project
+      produces:
+      - application/json
+      responses:
+        "301":
+          description: Moved Permanently
+          schema:
+            type: string
+      summary: Redirect to inspiration source
+      tags:
+      - Info
+  /movie-cast/:
+    get:
+      description: Returns the list of all movie and cast relationships
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Get all movie-cast relations
+      tags:
+      - MovieCast
+    post:
+      consumes:
+      - application/json
+      description: Create relation between a movie and a cast
+      parameters:
+      - description: Movie Cast Link
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/bindparam.LinkMovie2CastRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Link movie to cast
+      tags:
+      - MovieCast
+  /movie-cast/{id}:
+    delete:
+      description: Deletes a movie-cast relationship using its ID
+      parameters:
+      - description: MovieCast ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Delete movie-cast relation by ID
+      tags:
+      - MovieCast
+    get:
+      description: Returns a specific movie-cast relationship using its ID
+      parameters:
+      - description: MovieCast ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Get movie-cast relation by ID
+      tags:
+      - MovieCast
+  /movie-cast/movie/{movie_id}/cast/{cast_id}:
+    delete:
+      description: Deletes the relationship between a specific movie and cast member
+      parameters:
+      - description: Movie ID
+        in: path
+        name: movie_id
+        required: true
+        type: integer
+      - description: Cast ID
+        in: path
+        name: cast_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Delete movie-cast relation by movie ID and cast ID
+      tags:
+      - MovieCast
+    get:
+      description: Returns the relationship between a specific movie and cast member
+      parameters:
+      - description: Movie ID
+        in: path
+        name: movie_id
+        required: true
+        type: integer
+      - description: Cast ID
+        in: path
+        name: cast_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Get movie-cast relation by movie ID and cast ID
+      tags:
+      - MovieCast
+  /movie/add-movie:
+    post:
+      consumes:
+      - application/json
+      description: Add a new movie to the system
+      parameters:
+      - description: Movie data
+        in: body
+        name: movie
+        required: true
+        schema:
+          $ref: '#/definitions/bindparam.CreateMovieRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Create a new movie
+      tags:
+      - Movies
+  /movie/rem-movie:
+    delete:
+      consumes:
+      - application/json
+      description: Remove a movie by its ID
+      parameters:
+      - description: Movie ID
+        in: body
+        name: id
+        required: true
+        schema:
+          $ref: '#/definitions/bindparam.RemoveMovieByIdRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Delete a movie
+      tags:
+      - Movies
+  /movie/show:
+    get:
+      consumes:
+      - application/json
+      description: Get movies with optional filters
+      parameters:
+      - description: Movie title
+        in: query
+        name: title
+        type: string
+      - description: Movie quality
+        in: query
+        name: quality
+        type: string
+      - description: Release year
+        in: query
+        name: release
+        type: integer
+      - description: Release filter action (gr, ls, eq, grq, lse, neq)
+        in: query
+        name: release-action
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Filter movies
+      tags:
+      - Movies
+  /movie/show-all:
+    get:
+      consumes:
+      - application/json
+      description: Get list of all movies
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Get all movies
+      tags:
+      - Movies
+  /movie/show/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a single movie using its ID from URI
+      parameters:
+      - description: Movie ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseresponse.Response'
+      summary: Get movie by ID
+      tags:
+      - Movies
+swagger: "2.0"

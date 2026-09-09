@@ -1,0 +1,141 @@
+{
+  "Movies": [
+    {
+      "title": "Titanic",
+      "releaseYear": 1997,
+      "quality": "1080p",
+      "id": 1,
+      "actors": [
+        1,
+        2
+      ]
+    },
+    {
+      "title": "Inception",
+      "releaseYear": 2010,
+      "quality": "4K",
+      "id": 2,
+      "actors": [
+        1,
+        3
+      ]
+    },
+    {
+      "title": "The Dark Knight Rises",
+      "releaseYear": 2012,
+      "quality": "4K",
+      "id": 3,
+      "actors": [
+        3,
+        5,
+        12
+      ]
+    },
+    {
+      "title": "The Avengers",
+      "releaseYear": 2012,
+      "quality": "1080p",
+      "id": 4,
+      "actors": [
+        4,
+        11
+      ]
+    },
+    {
+      "title": "Once Upon a Time in Hollywood",
+      "releaseYear": 2019,
+      "quality": "4K",
+      "id": 5,
+      "actors": [
+        1,
+        7
+      ]
+    },
+    {
+      "title": "Mad Max: Wasteland",
+      "releaseYear": 2023,
+      "quality": "4K",
+      "id": 6,
+      "actors": [
+        3,
+        9
+      ]
+    },
+    {
+      "title": "The Prestige",
+      "releaseYear": 2006,
+      "quality": "1080p",
+      "id": 7,
+      "actors": [
+        5,
+        6,
+        12
+      ]
+    },
+    {
+      "title": "Ghost in the Shell",
+      "releaseYear": 2017,
+      "quality": "720p",
+      "id": 8,
+      "actors": [
+        4,
+        10
+      ]
+    },
+    {
+      "title": "Black Swan",
+      "releaseYear": 2010,
+      "quality": "1080p",
+      "id": 9,
+      "actors": [
+        6,
+        10,
+        12
+      ]
+    },
+    {
+      "title": "Seven",
+      "releaseYear": 1995,
+      "quality": "1080p",
+      "id": 10,
+      "actors": [
+        7,
+        8
+      ]
+    },
+    {
+      "title": "The Shawshank Redemption",
+      "releaseYear": 1994,
+      "quality": "1080p",
+      "id": 11,
+      "actors": [
+        8
+      ]
+    },
+    {
+      "title": "Iron Man",
+      "releaseYear": 2008,
+      "quality": "4K",
+      "id": 12,
+      "actors": [
+        9,
+        11
+      ]
+    },
+    {
+      "title": "Inception2",
+      "releaseYear": 2010,
+      "quality": "1080p",
+      "id": 14,
+      "actors": null
+    },
+    {
+      "title": "SeedBaba",
+      "releaseYear": 2000,
+      "quality": "720p",
+      "id": 15,
+      "actors": null
+    }
+  ],
+  "LastMovieID": 15
+}

@@ -1,0 +1,65 @@
+package main
+
+import (
+	"context"
+	"log"
+	"os"
+	"os/signal"
+
+	"github.com/go-telegram/bot"
+	"github.com/go-telegram/bot/models"
+	"github.com/spf13/viper"
+)
+
+// Send any text message to the bot after the bot has been started
+
+type Config struct {
+	Token string `mapstructure:"TOKEN"`
+}
+
+func main() {
+	// Retrieve the API token from environment variables
+	viper.AddConfigPath("..")
+	viper.SetConfigType("env")
+	viper.SetConfigFile(".env")
+
+	err := viper.ReadInConfig()
+	if err != nil {
+		log.Fatal("ERR", err)
+	}
+
+	var cfg Config
+	if err := viper.Unmarshal(&cfg); err != nil {
+		log.Fatal("ERR", err)
+
+	}
+
+	apiToken := cfg.Token
+
+	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
+	defer cancel()
+
+	opts := []bot.Option{
+		bot.WithDefaultHandler(handler),
+		bot.WithDebug(),
+	}
+
+	b, err := bot.New(apiToken, opts...)
+	if nil != err {
+		// panics for the sake of simplicity.
+		// you should handle this error properly in your code.
+		panic(err)
+	}
+
+	log.Println("************")
+	b.Start(ctx)
+}
+
+func handler(ctx context.Context, b *bot.Bot, update *models.Update) {
+	if update.Message != nil {
+		b.SendMessage(ctx, &bot.SendMessageParams{
+			ChatID: update.Message.Chat.ID,
+			Text:   update.Message.Text+"9797979",
+		})
+	}
+}

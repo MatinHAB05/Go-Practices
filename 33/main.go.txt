@@ -1,0 +1,61 @@
+package main
+
+import (
+	"log"
+
+	"github.com/spf13/viper"
+	"github.com/wneessen/go-mail"
+)
+
+const ENV_FILE = `C:\Users\MSI\Pictures\.env`
+
+type EmailConfig struct {
+	EmailFrom string `mapstructure:"email_from"`
+	EmailTo   string `mapstructure:"email_to"`
+	Password  string `mapstructure:"email_password"`
+	Host      string `mapstructure:"smtp_host"`
+	Port      int    `mapstructure:"smtp_port"`
+}
+
+func main() {
+	var cfg EmailConfig
+	viper.AddConfigPath(ENV_FILE + `\..`)
+	viper.SetConfigName(".env")
+	viper.SetConfigType("env")
+
+	if err := viper.ReadInConfig(); err != nil {
+		log.Fatalln(err)
+	}
+
+	if err := viper.Unmarshal(&cfg); err != nil {
+		log.Fatalln(err)
+	}
+	log.Println(cfg)
+
+	message := mail.NewMsg()
+	if err := message.From(cfg.EmailFrom); err != nil {
+		log.Fatalf("failed to set From address: %s", err)
+	}
+	if err := message.To(cfg.EmailTo); err != nil {
+		log.Fatalf("failed to set To address: %s", err)
+	}
+	message.Subject("This is my first mail with go-mail!")
+	message.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
+	message.SetBodyHTMLTemplate()
+
+	client, err := mail.NewClient(
+		cfg.Host,
+		mail.WithPort(cfg.Port),
+		mail.WithSMTPAuth(mail.SMTPAuthPlain), 
+		mail.WithUsername(cfg.EmailFrom),
+		mail.WithPassword(cfg.Password),
+		mail.WithTLSPolicy(mail.TLSMandatory), 
+	)
+	if err != nil {
+		log.Fatalf("failed to create mail client: %s", err)
+	}
+
+	if err := client.DialAndSend(message); err != nil {
+		log.Fatalf("failed to send mail: %s", err)
+	}
+}

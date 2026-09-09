@@ -1,0 +1,470 @@
+basePath: /
+definitions:
+  baseerrorresponse.Response:
+    properties:
+      error: {}
+      result: {}
+      success:
+        type: boolean
+    type: object
+  entity.Cast:
+    properties:
+      id:
+        type: integer
+      movies:
+        items:
+          type: integer
+        type: array
+      name:
+        type: string
+    type: object
+  entity.Movie:
+    properties:
+      casts:
+        items:
+          type: integer
+        type: array
+      id:
+        type: integer
+      quality:
+        $ref: '#/definitions/entity.VideoQuality'
+      releaseYear:
+        type: integer
+      title:
+        type: string
+    type: object
+  entity.VideoQuality:
+    enum:
+    - 720p
+    - 1080p
+    - 4K
+    type: string
+    x-enum-varnames:
+    - HD
+    - FHD
+    - FOUR_K
+  param.CreateCastRequest:
+    properties:
+      name:
+        type: string
+    type: object
+  param.CreateMovieRequest:
+    properties:
+      quality:
+        $ref: '#/definitions/entity.VideoQuality'
+      releaseYear:
+        type: integer
+      title:
+        type: string
+    type: object
+  param.LinkMovie2CastRequest:
+    properties:
+      cast-id:
+        type: integer
+      movie-id:
+        type: integer
+    required:
+    - cast-id
+    - movie-id
+    type: object
+host: localhost:8097
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server celler server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /v0/cast/add-cast:
+    post:
+      consumes:
+      - application/json
+      description: Add a new cast
+      parameters:
+      - description: Cast Data
+        in: body
+        name: cast
+        required: true
+        schema:
+          $ref: '#/definitions/param.CreateCastRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            allOf:
+            - $ref: '#/definitions/baseerrorresponse.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/entity.Cast'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+      summary: Create a new cast
+      tags:
+      - Casts
+  /v0/cast/rem-cast:
+    delete:
+      consumes:
+      - application/json
+      description: Remove a cast by ID
+      parameters:
+      - description: Cast ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/baseerrorresponse.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/entity.Cast'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+      summary: Delete a cast
+      tags:
+      - Casts
+  /v0/cast/show:
+    get:
+      consumes:
+      - application/json
+      description: Filter casts by name
+      parameters:
+      - description: Cast name prefix
+        in: query
+        name: name
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/baseerrorresponse.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/entity.Cast'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+      summary: Filter casts
+      tags:
+      - Casts
+  /v0/cast/show-all:
+    get:
+      consumes:
+      - application/json
+      description: Get all casts
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/baseerrorresponse.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/entity.Cast'
+                  type: array
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+      summary: List all casts
+      tags:
+      - Casts
+  /v0/cast/show/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a cast by its ID
+      parameters:
+      - description: Cast ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/baseerrorresponse.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/entity.Cast'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+      summary: Get cast by ID
+      tags:
+      - Casts
+  /v0/movie-cast-link/:
+    post:
+      consumes:
+      - application/json
+      description: Create relation between a movie and a cast
+      parameters:
+      - description: Movie Cast Link
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/param.LinkMovie2CastRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+      summary: Link movie to cast
+      tags:
+      - MovieCast
+  /v0/movie/add-movie:
+    post:
+      consumes:
+      - application/json
+      description: Add a new movie to the system
+      parameters:
+      - description: Movie data
+        in: body
+        name: movie
+        required: true
+        schema:
+          $ref: '#/definitions/param.CreateMovieRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            allOf:
+            - $ref: '#/definitions/baseerrorresponse.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/entity.Movie'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+      summary: Create a new movie
+      tags:
+      - Movies
+  /v0/movie/rem-movie:
+    delete:
+      consumes:
+      - application/json
+      description: Remove a movie by its ID
+      parameters:
+      - description: Movie ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/baseerrorresponse.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/entity.Movie'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+      summary: Delete a movie
+      tags:
+      - Movies
+  /v0/movie/show:
+    get:
+      consumes:
+      - application/json
+      description: Get movies with optional filters
+      parameters:
+      - description: Movie title
+        in: query
+        name: title
+        type: string
+      - description: Movie quality
+        in: query
+        name: quality
+        type: string
+      - description: Release year
+        in: query
+        name: release
+        type: integer
+      - description: Release filter action (gt, lt, eq)
+        in: query
+        name: release-action
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/baseerrorresponse.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/entity.Movie'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+      summary: Filter movies
+      tags:
+      - Movies
+  /v0/movie/show-all:
+    get:
+      consumes:
+      - application/json
+      description: Get list of all movies
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/baseerrorresponse.Response'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/entity.Movie'
+                  type: array
+              type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+      summary: Get all movies
+      tags:
+      - Movies
+  /v0/movie/show/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a single movie using its ID from URI
+      parameters:
+      - description: Movie ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/baseerrorresponse.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/entity.Movie'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/baseerrorresponse.Response'
+      summary: Get movie by ID
+      tags:
+      - Movies
+swagger: "2.0"
